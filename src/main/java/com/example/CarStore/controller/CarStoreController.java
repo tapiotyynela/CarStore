@@ -52,6 +52,7 @@ public class CarStoreController {
 	        return "redirect:../carlist";
 	    }
 	 
+	 // heroku testi
 	 @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	    public String editBook(@PathVariable("id") Long Id, Model model) {
 	    	Car car = repository.findCarsById(Id);
