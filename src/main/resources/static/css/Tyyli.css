@@ -1,0 +1,81 @@
+
+body {
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+	text-align: center;
+	font-size: 85px;
+	text-shadow: 5px 5px 5px black;
+	font-family: 'Shrikhand', cursive;
+	color: black;
+	
+}
+
+ {
+	padding-left: 200;
+	padding-bottom: 500;
+}
+
+h3 {
+	text-align: center;
+	font-size: 45px;
+	font-family: 'Noto Serif JP', sans-serif;
+	
+}
+
+p  {
+	text-align: center;
+	font-family: 'Mitr', sans-serif;
+	
+}
+
+th {
+	padding-right: 15px;
+	text-decoration: underline;
+}
+
+td {
+	
+}
+
+table {
+	background-color: white;
+}
+
+form {
+	padding-left: 350px;
+	
+}
+
+a {
+	
+}
+
+button {
+    border-style: outset;
+    border-radius: 12px;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* On mouse-over */
+button:hover {background: green;}
+
+input {
+	    border: 1px solid #ccc;
+		
+		
+}
+
+label {
+	text-align: center;
+}
+
+
+	 

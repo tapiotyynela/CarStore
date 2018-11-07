@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of cars</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/Tyyli.css" />
+<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Mitr|Noto+Serif+JP|Shrikhand" rel="stylesheet">
+</head>
+<body>
+	<h1>Welcome!</h1>
+	<p>These cars are on sale</p>
+    <table class="table table-striped">
+		<tr>
+		    <th>Brand</th>
+		    <th>Type</th>
+		    <th>Model</th>
+		    <th>Bodystyle</th>
+		    <th>Year</th>
+		    <th>Colour</th>
+		    <th>Transmission</th>
+		    <th>Gastype</th>
+		    <th>Registernumber</th>
+		    <th>Price</th>
+		    <th>Salesman</th>    
+		</tr>  
+    	<tr th:each = "car : ${cars}">
+    		<td th:text="${car.brand} "></td>
+    		<td th:text="${car.type} "></td>
+    		<td th:text="${car.model} "></td>
+    		<td th:text="${car.bodyStyle} "></td>
+    		<td th:text="${car.year}"></td>
+    		<td th:text="${car.colour}"></td>
+    		<td th:text="${car.transmission}"></td>
+    		<td th:text="${car.gasType}"></td>
+    		<td th:text="${car.registerNumber}"></td>
+    		<td th:text="${car.price}"></td>
+    		 <td th:text="${car.salesman}"></td>
+    		
+    		
+			    			
+    		<td><a th:href="@{/delete/{id}(id=${car.id})}">Delete</a></td>
+    		<td><a th:href="@{/edit/{id}(id=${car.id})}">Edit</a></td>
+    		<td><a th:href="@{/sell/{id}(id=${car.id})}">Sell car</a></td>   
+    		  
+    	</tr>
+     </table>
+	 <button type="button" onclick="location.href='/addcar'">Add new car to the store</button>    
+
+</body>
+</html>

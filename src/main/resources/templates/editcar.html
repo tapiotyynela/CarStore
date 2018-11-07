@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Car Store</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3>Edit Car</h3>
+	<div>
+		<form th:object="${car}" th:action="@{../save}" action="#" method="post">		
+			<label for="id">ID</label>
+			<input type="text" id="id" th:field="*{Id}" readonly = "readonly"/>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="brand">Brand</label> <br>
+			 <input type="text" id="brand"
+				th:field="*{brand}" value="*{brand}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="model">Model</label> <br>
+			 <input type="text" id="model"
+				th:field="*{model}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="bodyStyle">Bodystyle</label> <br>
+			 <input type="text" id="bodyStyle"
+				th:field="*{bodyStyle}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="year">Year</label> <br>
+			 <input type="text" id="year"
+				th:field="*{year}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="colour">Colour</label> <br>
+			 <input type="text" id="colour"
+				th:field="*{colour}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="catlist">Transmission</label> 
+			<select id="catlist" th:field="*{transmission}" class="form-control">
+			<option th:text="Automaatti" value="Automaatti"></option>
+			<option th:text="Manuaali" value="Manuaali"></option>
+			</select>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="catlist">Gastype</label>
+			<select id="catlist" th:field="*{gasType}" class="form-control">
+			<option th:text="Bensiini" value="Bensiini"></option>
+			<option th:text="Diesel" value="Diesel"></option>
+			</select>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="type">Type</label>
+			<select id="catlist" th:field="*{type}" class="form-control">
+			<option th:text="Maasturi" value="Maasturi"></option>
+			<option th:text="Kuorma-auto" value="Kuorma-auto"></option>
+			<option th:text="Pakettiauto" value="Pakettiauto"></option>
+			<option th:text="Henkilöauto" value="Henkilöauto"></option>
+			<option th:text="Ralliauto" value="Ralliauto"></option>
+			</select>
+			<div style="clear: both; display: block; height: 10px; align-items: center;"></div>
+			
+			<label for="registerNumber">Registernumber</label> <br>
+			 <input type="text" id="registerNumber"
+				th:field="*{registerNumber}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="price">Price</label> <br>
+			 <input type="text" id="price"
+				th:field="*{price}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="catlist">Salesman</label>
+			 <select id="catlist" th:field="*{salesman}" class="form-control">
+       			<option th:each="salesman: ${salesmans}" th:value="${salesman.salesmanID}" th:text="${salesman.firstName + '' + salesman.lastName}"></option>
+    		</select>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+
+			<button type="submit">Add car to store</button>
+			<button type="button" class="takaisin" onclick="location.href='/carlist'">Back to Carlist</button>
+		</form>
+	</div>
+</body>
+</html>
