@@ -33,6 +33,11 @@ public class CarStoreController {
 	        return "carlist";
 }
 	
+	@GetMapping(value="/")
+	public String index() {
+		return "carlist";
+	}
+	
 	 @RequestMapping(value = "/addcar")
 	    public String addCar(Model model){
 	    	model.addAttribute("car", new Car());
