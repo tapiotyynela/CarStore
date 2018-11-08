@@ -32,11 +32,10 @@ public class CarStoreController {
 	        model.addAttribute("cars", repository.findAll());
 	        return "carlist";
 }
-	
-	@GetMapping(value="/")
-	public String index() {
-		return "carlist";
-	}
+	@RequestMapping("/")
+    public String index() {
+        return "redirect:carlist";
+    }
 	
 	 @RequestMapping(value = "/addcar")
 	    public String addCar(Model model){
