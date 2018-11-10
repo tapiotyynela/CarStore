@@ -13,6 +13,10 @@ import com.example.CarStore.domain.Car;
 import com.example.CarStore.domain.CarRepository;
 import com.example.CarStore.domain.SalesMan;
 import com.example.CarStore.domain.SalesManRepository;
+import com.example.CarStore.domain.User;
+import com.example.CarStore.domain.UserRepository;
+
+
 
 
 @SpringBootApplication
@@ -25,14 +29,10 @@ public class CarStoreApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(CarRepository repository, SalesManRepository srepository) {
+	public CommandLineRunner demo(CarRepository repository, SalesManRepository srepository, UserRepository urepository) {
 		return new CommandLineRunner () {
 			@Override
 			public void run(String... args) throws Exception {
-			log.info("save a couple of cars");
-			
-			repository.save(new Car("Pakettiauto", "WolksVagen", "Vito", "Paketti", "2000", "Blue", "Manual", "Diesel", "123-abc", 5000, srepository.findByLastName("Tyynela").get(0)));
-			repository.save(new Car("Kuorma-auto", "Scania", "moi", "Kuormuri", "2005", "Red", "Manual", "Bensin", "456-def", 30000, srepository.findByLastName("Virolainen").get(0)));	
 			
 			log.info("fetch all cars");
 			for (Car car: repository.findAll()) {

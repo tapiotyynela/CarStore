@@ -27,6 +27,12 @@ public class CarStoreController {
 	@Autowired
 	private SalesManRepository srepository;
 	
+	// Ohjataan kirjautumiseen
+    @RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }	
+	
 	// Luodaan endpoint sovelluksen etusivulle jossa näkyy lista myytävistä autoista
 	 @RequestMapping(value="/carlist", method = RequestMethod.GET)
 	    public String carList(Model model) {	
