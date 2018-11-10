@@ -35,7 +35,6 @@ public class CarStoreController {
     }	
 	
 	// Luodaan endpoint sovelluksen etusivulle jossa näkyy lista myytävistä autoista
-    @PreAuthorize("hasAuthority('USER')")
 	 @RequestMapping(value="/carlist", method = RequestMethod.GET)
 	    public String carList(Model model) {	
 	        model.addAttribute("cars", repository.findAll());
