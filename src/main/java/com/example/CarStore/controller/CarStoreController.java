@@ -55,6 +55,7 @@ public class CarStoreController {
 	        return "redirect:carlist";
 	    } 
 	 // endpoint joka auton deletoinnin jälkeen palauttaa etusivun
+	    @PreAuthorize("hasAuthority('ADMIN')")
 	 @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	    public String deleteCar(@PathVariable("id") Long Id, Model model) {
 	    	repository.deleteById(Id);
