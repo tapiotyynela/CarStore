@@ -30,8 +30,6 @@ public class CarStoreApplication {
 			@Override
 			public void run(String... args) throws Exception {
 			log.info("save a couple of cars");
-			srepository.save(new SalesMan("Tapio", "Tyynela"));
-			srepository.save(new SalesMan("Niko", "Virolainen"));
 			
 			repository.save(new Car("Pakettiauto", "WolksVagen", "Vito", "Paketti", "2000", "Blue", "Manual", "Diesel", "123-abc", 5000, srepository.findByLastName("Tyynela").get(0)));
 			repository.save(new Car("Kuorma-auto", "Scania", "moi", "Kuormuri", "2005", "Red", "Manual", "Bensin", "456-def", 30000, srepository.findByLastName("Virolainen").get(0)));	
