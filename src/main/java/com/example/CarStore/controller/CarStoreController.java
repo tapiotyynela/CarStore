@@ -25,6 +25,7 @@ public class CarStoreController {
 	@Autowired
 	private CarRepository repository;
 	
+	//kytketään repository
 	@Autowired
 	private SalesManRepository srepository;
 	
